@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; media-src 'self' data: blob:; connect-src 'self' data: blob:; worker-src 'self' blob:; manifest-src 'self'; form-action 'none'; base-uri 'none'; object-src 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Unit Convert — Free Unit Converter: Length, Weight, Temperature, Data… | S3eidat Tools</title>
+<meta name="description" content="Convert length, mass, temperature, volume, area, speed, time, data (SI and binary), pressure, energy, power, angle, fuel economy and cooking units. Two-way, live, searchable. Free and private.">
+<meta property="og:title" content="Unit Convert — free, private unit converter">
+<meta property="og:description" content="Length, weight, temperature, data and more. Runs 100% in your browser.">
+<meta property="og:image" content="screenshot.png">
+<link rel="icon" href="kit/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="kit/kit.css">
+<link rel="stylesheet" href="app.css">
+<script src="kit/kit.js"></script>
+</head>
+<body data-tool="unit-convert">
+<main class="s3-main">
+  <section class="s3-hero">
+    <h1>Unit Convert</h1>
+    <p>Fourteen kinds of units, converted both ways as you type. Search a unit, or type a whole question like <code>5 km to mi</code>.</p>
+  </section>
+
+  <section class="card stack">
+    <div class="search">
+      <label class="sr" for="q">Search units</label>
+      <input class="input" id="q" type="search" autocomplete="off" spellcheck="false" placeholder="Search units, or type “72 f to c”, “3 cups in ml”…" role="combobox" aria-expanded="false" aria-controls="hits" aria-autocomplete="list">
+      <div class="hits" id="hits" role="listbox" hidden></div>
+    </div>
+    <div class="cats" id="cats" role="group" aria-label="Category"></div>
+    <div class="conv">
+      <div class="side">
+        <label class="sr" for="va">From value</label>
+        <input class="input val" id="va" inputmode="decimal" autocomplete="off" spellcheck="false">
+        <label class="sr" for="ua">From unit</label>
+        <select class="select" id="ua"></select>
+      </div>
+      <button class="btn icon swap" id="swap" aria-label="Swap units" title="Swap"><svg class="i" viewBox="0 0 24 24"><path d="M7 7h13l-4-4M17 17H4l4 4"/></svg></button>
+      <div class="side">
+        <label class="sr" for="vb">To value</label>
+        <input class="input val" id="vb" inputmode="decimal" autocomplete="off" spellcheck="false">
+        <label class="sr" for="ub">To unit</label>
+        <select class="select" id="ub"></select>
+      </div>
+    </div>
+    <div class="row between">
+      <p class="formula" id="formula"></p>
+      <button class="btn small" id="copy"><svg class="i"><use href="#i-copy"/></svg>Copy</button>
+    </div>
+  </section>
+
+  <section class="card mt">
+    <div class="row between">
+      <h2 id="all-h">All units</h2>
+      <span class="faint">Click a row to copy its value</span>
+    </div>
+    <div class="tbl-wrap mt"><table class="tbl" id="all"></table></div>
+    <p class="faint mt" id="note"></p>
+  </section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>

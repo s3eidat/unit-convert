@@ -1,0 +1,32 @@
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.search { position: relative; }
+.hits { position: absolute; z-index: 20; left: 0; right: 0; top: calc(100% + 6px); max-height: 320px; overflow: auto; padding: 6px;
+  border-radius: 12px; background: var(--surface); border: 1px solid var(--line-strong); box-shadow: var(--shadow-pop); }
+.hits button { display: flex; width: 100%; justify-content: space-between; gap: 12px; padding: 8px 10px; border-radius: 8px; text-align: left; font-size: 13.5px; }
+.hits button:hover, .hits button.on { background: var(--surface-2); }
+.hits button span { color: var(--text-3); font-size: 12.5px; }
+.hits .none { padding: 8px 10px; color: var(--text-3); font-size: 13px; }
+
+.cats { display: flex; flex-wrap: wrap; gap: 6px; }
+.cats button { padding: 6px 12px; border-radius: 999px; font-size: 13px; font-weight: 600; color: var(--text-2); background: var(--surface-2); border: 1px solid var(--line); transition: background var(--dur), color var(--dur); }
+.cats button:hover { color: var(--text); border-color: var(--line-strong); }
+.cats button[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); border-color: transparent; }
+
+.conv { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: 12px; align-items: center; }
+.side { display: grid; gap: 8px; padding: 12px; border-radius: 14px; background: var(--surface-2); border: 1px solid var(--line); }
+.side .val { font-size: 26px; font-weight: 700; letter-spacing: -.01em; min-height: 54px; background: var(--surface); font-variant-numeric: tabular-nums; }
+.side .select { background-color: var(--surface); }
+.swap { width: 42px; height: 42px; border-radius: 99px; }
+@media (max-width: 640px) {
+  .conv { grid-template-columns: minmax(0, 1fr); }
+  .swap { justify-self: center; transform: rotate(90deg); }
+}
+.formula { margin: 0; color: var(--text-2); font-family: var(--mono); font-size: 13px; overflow-wrap: anywhere; }
+
+#all tbody tr { cursor: pointer; }
+#all tbody tr:hover td { background: var(--surface-2); }
+#all tr.on td { background: var(--accent-soft); font-weight: 600; }
+#all td.v { font-family: var(--mono); text-align: right; overflow-wrap: anywhere; }
+#all th.v { text-align: right; }
+#all td.s { color: var(--text-3); }
+#note:empty { display: none; }
